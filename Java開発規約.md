@@ -73,3 +73,102 @@ final修飾子の有り無しの順番:
 
 - final修飾子あり
 - final修飾子なし
+
+## 全般
+
+### 配列
+
+配列は型の後、変数名の前に"[]"を付けてください。
+
+> **例**  
+> OK:
+>  ```java
+>   int[] nums = new int[10];
+>  ```
+>
+> NG:
+>  ```java
+>   int nums[] = new int[10];
+>  ```
+>
+
+### 型パラメータ
+
+型パラメータの名前は**大文字かつ一文字**にしてください。
+
+> **例**  
+> OK:
+>  ```java
+>   public static <T> List<T> copy(List<T> list) {
+>       //省略
+>   }
+>  ```
+>
+> NG:
+>  ```java
+>   public static <t> List<t> copy(List<t> list) {
+>       //省略
+>   }
+> 
+>   public static <TYPE> List<TYPE> reverseCopy(List<TYPE> list) {
+>       //省略
+>   }
+>  ```
+>
+
+## 処理関係
+
+### try-catch
+
+catch処理は空にしないでください。  
+空の場合は、処理が無い理由を記述したコメントを付けてください。
+
+> **例**  
+> OK:
+>  ```java
+>   try {
+>       Thread.sleep(114514);
+>   } catch (InterruptedException e) {
+>       Thread.currentThread().interrupt();
+>   }
+>
+>   try {
+>       Files.readAllBytes(PATH);
+>   } catch (IOException ex) {
+>       // エラー処理なんか必要ねぇんだよ！
+>   }
+>  ```
+>
+> NG:
+>  ```java
+>   try {
+>       Thread.sleep(114514);
+>   } catch (InterruptedException e) {
+>   }
+>
+>   try {
+>       Files.readAllBytes(PATH);
+>   } catch (IOException ex) {
+>   }
+>  ```
+>
+
+### equals
+
+リテラルと変数をequalsメソッドで比較する場合は、リテラルを左側に変数を右側に配置してください。
+
+> **例**  
+> OK:
+>  ```java
+>   if ("IKISUGI".equals(ikisugiStr)) {
+>       System.out.println("You are ikisugi.");
+>   }
+>  ```
+>
+> NG:
+>  ```java
+>   if (ikisugiStr.equals("IKISUGI")) {
+>       System.out.println("You are ikisugi.");
+>   }
+>  ```
+>
