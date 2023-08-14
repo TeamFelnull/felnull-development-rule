@@ -37,7 +37,7 @@ mainメソッドが存在するクラスには`Main`を命名して、逆に存�
 
 ## フィールド
 
-### 命名
+### 命名*
 
 フィールド名は**キャメルケース**、 static修飾子が付いている場合は**全て大文字のスネークケース**にしてください。
 
@@ -76,7 +76,7 @@ final修飾子の有り無しの順番:
 
 ## 全般
 
-### 配列
+### 配列*
 
 配列は型の後、変数名の前に"[]"を付けてください。
 
@@ -92,7 +92,7 @@ final修飾子の有り無しの順番:
 >  ```
 >
 
-### 型パラメータ
+### 型パラメータ*
 
 型パラメータの名前は**大文字かつ一文字**にしてください。
 
@@ -118,7 +118,7 @@ final修飾子の有り無しの順番:
 
 ## 処理関係
 
-### try-catch
+### try-catch*
 
 catch処理は空にしないでください。  
 空の場合は、処理が無い理由を記述したコメントを付けてください。
@@ -153,22 +153,79 @@ catch処理は空にしないでください。
 >  ```
 >
 
-### equals
+### equals*
 
 リテラルと変数をequalsメソッドで比較する場合は、リテラルを左側に変数を右側に配置してください。
 
 > **例**  
 > OK:
 >  ```java
->   if ("IKISUGI".equals(ikisugiStr)) {
+>   if ("IKISUGI".equals(stateStr)) {
 >       System.out.println("You are ikisugi.");
 >   }
 >  ```
 >
 > NG:
 >  ```java
->   if (ikisugiStr.equals("IKISUGI")) {
+>   if (stateStr.equals("IKISUGI")) {
 >       System.out.println("You are ikisugi.");
 >   }
 >  ```
 >
+
+### 空白*
+
+インデント等にタブ文字(`\t`)の使用を避け、空白(` `)を使用してください。
+
+### 総称型*
+
+総称型の`<`と`>`の間に不要な空白を含まないでください。
+
+> **例**  
+> OK:
+>  ```java
+>   List<String> inmGorokuList = new ArrayList<>();
+>  ```
+>
+> NG:
+>  ```java
+>   List< String > inmGorokuList = new ArrayList< >();
+>  ```
+>
+
+### ユーティリティクラス*
+
+ユーティリティクラスなどstaticメソッド、staticフィードのみを持つクラスはインスタンス化させないために、privateのコンストラクタを作成してくださ。
+
+> **例**  
+> OK:
+> ```java
+> public class YJUtils {
+>    public static final int YJSNPI_NUMBER = 114514;
+>
+>    public static boolean isYJNumber(int num) {
+>        return YJSNPI_NUMBER == num;
+>    }
+> }
+>```
+>
+> NG:
+> ```java
+> public class YJUtils {
+>    public static final int YJSNPI_NUMBER = 114514;
+>       
+>    private TestFileUtils() {
+>    }
+> 
+>    public static boolean isYJNumber(int num) {
+>        return YJSNPI_NUMBER == num;
+>    }
+> }
+>```
+>
+
+### インデント*
+
+インデントは空白4個ずつに合わせてください。  
+IDEのフォーマッタを利用すれば大丈夫です。
+
