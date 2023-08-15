@@ -74,6 +74,12 @@ final修飾子の有り無しの順番:
 - final修飾子あり
 - final修飾子なし
 
+## メソッド
+
+### パラメータ*
+
+パラメータ名、ローカル変数名はキャメルケースにしてください。(ラムダ式、try-catchも含む)
+
 ## 全般
 
 ### 配列*
@@ -226,6 +232,56 @@ catch処理は空にしないでください。
 
 ### インデント*
 
-インデントは空白4個ずつに合わせてください。  
-IDEのフォーマッタを利用すれば大丈夫です。
+インデントは空白4個ずつに合わせてください。
 
+### 括弧*
+
+`{`は行末に、`}`は後ろに文がある場合は、その行に書いてください。
+
+> **例**  
+> OK:
+>  ```java
+> public void setState(String state) {
+>
+>     if ("ikisugi".equals(state)) {
+>         this.state = "very ikisugi";
+>     } else {
+>         this.state = state;
+>     }
+>     
+> }
+>  ```
+>
+> NG:
+>  ```java
+> public void setState(String state) 
+> {
+>
+>     if ("ikisugi".equals(state)) 
+>     {
+>         this.state = "very ikisugi";
+>     }
+>     else
+>     {
+>         this.state = state;
+>     }
+>     
+> }
+>  ```
+>
+
+### 行*
+1行の最大文字数はimport、package、URL等を除いて120文字です。  
+それ以上記述する場合は折り返してください。
+
+## コメント
+
+### JavaDoc*
+
+以下のコードにはJavaDocコメントを付けてください。
+
+- クラス、列挙型、インターフェイス、レコード
+- setter、getter以外のメソッド
+- フィールド
+
+@paramと@returnは必ず記載してください。
