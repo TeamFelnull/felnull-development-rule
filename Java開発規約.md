@@ -224,7 +224,7 @@ catch処理は空にしないでください。
 > public class YJUtils {
 >    public static final int YJSNPI_NUMBER = 114514;
 >       
->    private TestFileUtils() {
+>    private YJUtils() {
 >    }
 > 
 >    public static boolean isYJNumber(int num) {
