@@ -75,7 +75,7 @@
         <!--コーディング関係-->
         <!-- https://checkstyle.org/checks/coding/index.html -->
         <module name="DeclarationOrder"/><!--宣言順番の確認-->
-        <module name="DefaultComesLast"/><!--switchが最後あるかどうか確認-->
+        <module name="DefaultComesLast"/><!--switchのdefaultが最後あるかどうか確認-->
         <module name="EmptyStatement"/><!--空のステートメント確認-->
         <module name="EqualsAvoidNull"/><!--リテラルと変数の比較配置確認-->
         <module name="EqualsHashCode"/><!--equalsとhashCode確認-->
@@ -94,6 +94,11 @@
         <module name="StringLiteralEquality"/><!--文字列を=で比較確認-->
         <module name="UnnecessarySemicolonAfterOuterTypeDeclaration"/><!--クラス宣言後のセミコロン確認-->
         <module name="UnnecessarySemicolonAfterTypeMemberDeclaration"/><!--不要なセミコロン確認-->
+
+        <!--ローカル変数型確認-->
+        <module name="IllegalType">
+            <property name="illegalClassNames" value="var"/>
+        </module>
 
         <!--未使用変数確認-->
         <module name="UnusedLocalVariable">
@@ -183,18 +188,38 @@
         <module name="LocalVariableName"/><!--ローカル変数の命名規則確認-->
         <module name="MemberName"/><!--メンバー変数の命名規則確認-->
         <module name="MethodName"/><!--メソッドの命名規則確認-->
-        <module name="PackageName"/><!--パッケージの命名規則確認-->
+
+        <!--パッケージの命名規則確認-->
+        <module name="PackageName">
+            <property name="format" value="^[a-z]+(\.[a-z][a-z0-9]*)*$"/>
+        </module>
+
         <module name="ParameterName"/><!--メソッドパラメータの命名規則確認-->
         <module name="LambdaParameterName"/><!--ラムダ式パラメータの命名規則確認-->
         <module name="CatchParameterName"/><!--catchパラメータの命名規則確認-->
-        <module name="StaticVariableName"><!--finalではないクラス変数の命名規則確認-->
-            <property name="format" value="^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
-        </module>
+        <module name="StaticVariableName"/><!--finalではないクラス変数の命名規則確認-->
         <module name="TypeName"/><!--クラス、インターフェイスの命名規則確認-->
-        <module name="ClassTypeParameterName"/> <!--クラス型パラメータの命名規則確認-->
-        <module name="InterfaceTypeParameterName"/><!--インターフェイス型パラメータの命名規則確認-->
-        <module name="RecordTypeParameterName"/> <!--レコード型パラメータの命名規則確認-->
-        <module name="MethodTypeParameterName"/><!--メソッド型パラメータの命名規則確認-->
+
+        <!--クラス型パラメータの命名規則確認-->
+        <module name="ClassTypeParameterName">
+            <property name="format" value="^[A-Z]+([A-Z0-9]*)*$"/>
+        </module>
+
+        <!--インターフェイス型パラメータの命名規則確認-->
+        <module name="InterfaceTypeParameterName">
+            <property name="format" value="^[A-Z]+([A-Z0-9]*)*$"/>
+        </module>
+
+        <!--レコード型パラメータの命名規則確認-->
+        <module name="RecordTypeParameterName">
+            <property name="format" value="^[A-Z]+([A-Z0-9]*)*$"/>
+        </module>
+
+        <!--メソッド型パラメータの命名規則確認-->
+        <module name="MethodTypeParameterName">
+            <property name="format" value="^[A-Z]+([A-Z0-9]*)*$"/>
+        </module>
+
         <module name="PatternVariableName"/><!--パターン変数の命名規則確認-->
         <module name="RecordComponentName"/><!--レコードコンポーネントの命名規則確認-->
 
