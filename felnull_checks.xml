@@ -3,7 +3,7 @@
         "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
         "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
-    <!-- FelNull開発用Checkstyle V1.0 -->
+<!-- FelNull開発用Checkstyle V1.0 -->
 
 <module name="Checker">
     <!-- 文字コード -->
@@ -174,7 +174,6 @@
         </module>
 
         <module name="UpperEll"/><!--LongのLが大文字か確認-->
-        <module name="Indentation"/><!--インデント確認-->
 
 
         <!--修飾子関係-->
