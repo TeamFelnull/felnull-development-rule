@@ -80,6 +80,25 @@ privateのメソッドにJavadocを記述するかどうかは自由ですが、
 
 また、クラス、インターフェイス、列挙型、レコードのJavadocには、@authorタグが必須です。
 
+## IntelliJ IDEA
+
+### CheckStyle
+
+IntelliJ IDEAを使用する場合は[CheckStyleプラグイン](https://plugins.jetbrains.com/plugin/1065-checkstyle-idea)
+をインストールすることをお勧めします。  
+インストール後、ツール -> CheckStyleからConfiguration Fileの+から、`Use a Checkstyle file accessible via HTTP`
+に以下のURLを入力してください。
+
+```
+https://raw.githubusercontent.com/TeamFelnull/felnull-development-rule/main/felnull_checks.xml
+```
+
+![IDEA Checkstyle Plugin Add](./images/idea_checkstyle_plugin_add.png)
+
+そして、以下のようにActiveにチェックを付けることでコードが違反している場合に、エディタ上に表示されるようになります。
+
+![IDEA Checkstyle Plugin](./images/idea_checkstyle_plugin.png)
+
 ## JUnit
 
 TODO
