@@ -6,7 +6,7 @@
 
 開発を行う際は以下のことを心掛けてください。
 
-- IntelliJ IDEAのフォーマッタを使用する。
+- IntelliJ IDEAの[フォーマッタ](https://pleiades.io/help/idea/reformat-and-rearrange-code.html)を使用する。
 - CheckStyleの[FelNull Style](./felnull_checks.xml)を適用して、スタイルを統一する。
 - JUnit等で単体テストを行う。
 - Qodanaでコードを解析してバグや脆弱性を減す。
@@ -14,7 +14,6 @@
 ## コーディング
 
 CheckStyleでコードのスタイルや空白、命名規則などを定義しています。  
-細かいことはIntelliJ IDEAのフォーマッタで整形することで、定義通りに一致させることが可能です。  
 特に注意すべき項目のみ以下にまとめます。  
 詳細は[FelNull Style](./felnull_checks.xml)を参照してください。
 
