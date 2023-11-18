@@ -86,7 +86,7 @@ privateのメソッドにJavadocを記述するかどうかは自由ですが、
 
 IntelliJ IDEAを使用する場合は[CheckStyleプラグイン](https://plugins.jetbrains.com/plugin/1065-checkstyle-idea)
 をインストールすることをお勧めします。  
-インストール後、ツール -> CheckStyleからConfiguration Fileの+から、`Use a Checkstyle file accessible via HTTP`
+インストール後、ファイル -> 設定 -> ツール -> CheckStyleからConfiguration Fileの+から、`Use a Checkstyle file accessible via HTTP`
 に以下のURLを入力してください。
 
 ```
