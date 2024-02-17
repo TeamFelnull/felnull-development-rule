@@ -85,9 +85,13 @@ privateのメソッドにJavadocを記述するかどうかは自由ですが、
 ### CheckStyle
 
 IntelliJ IDEAを使用する場合は[CheckStyleプラグイン](https://plugins.jetbrains.com/plugin/1065-checkstyle-idea)
-をインストールすることをお勧めします。  
-インストール後、ファイル -> 設定 -> ツール -> CheckStyleからConfiguration Fileの+から、`Use a Checkstyle file accessible via HTTP`
-に以下のURLを入力してください。
+をインストールすることをお勧めします。
+
+インストール後、ファイル → 設定 → ツールからCheckstyleを開き、Configuration Fileの+を押してください。
+
+![IDEA Checkstyle Plugin Add](./images/idea_checkstyle_configuration_file.png)
+
+Descriptionに`Felnull Checks`を入力して、`Use a Checkstyle file accessible via HTTP`にチェックを付け、以下のURLを入力してください。
 
 ```
 https://raw.githubusercontent.com/TeamFelnull/felnull-development-rule/main/felnull_checks.xml
@@ -95,9 +99,13 @@ https://raw.githubusercontent.com/TeamFelnull/felnull-development-rule/main/feln
 
 ![IDEA Checkstyle Plugin Add](./images/idea_checkstyle_plugin_add.png)
 
-そして、以下のようにActiveにチェックを付けることでコードが違反している場合に、エディタ上に表示されるようになります。
+追加したConfiguration FileのActiveにチェックを付けてください。  
+これで、コードが違反している場合に、エディタ上に表示されるようになります。
+
 
 ![IDEA Checkstyle Plugin](./images/idea_checkstyle_plugin.png)
+
+
 
 ## JUnit
 
